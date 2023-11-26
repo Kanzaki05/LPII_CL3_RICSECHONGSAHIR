@@ -1,0 +1,3 @@
+INDEX VERSION 1.134+C:\Users\SAHIR - PC\Desktop\Cibertec\Lenguaje de Programación II\Examen\CL3\LPII_CL3_RICSECHONGSAHIR\.metadata\.plugins\org.eclipse.jdt.core
+3867327298.index
+1865797976.index

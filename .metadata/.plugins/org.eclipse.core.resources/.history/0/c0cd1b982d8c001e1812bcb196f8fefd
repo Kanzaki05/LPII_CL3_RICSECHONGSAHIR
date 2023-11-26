@@ -1,0 +1,32 @@
+package com.bd.producto.controlador;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+
+import com.bd.producto.modelo.ClassProducto;
+import com.bd.produtos.servicios.IProductoServicio;
+
+
+@Controller
+public class ProductoController {
+	
+	@Autowired
+	private IProductoServicio iproductoservicio;
+	
+	@GetMapping("/ListadoProductos")
+	public String ListadoProductos(Model modelo) {
+		List<ClassProducto> listar=iproductoservicio.ListadoProducto();
+		
+		for(ClassProducto lis:listar) {
+			System.out.print("Codigo producto: "+lis.getIdproductocl3()+" nombre producto: "+lis.getNombrecl3());
+		}
+		
+		modelo.addAttribute("ListadoProductos",listar);
+		
+		return "Vistas/Productos/ListadoProductos";
+	}
+}

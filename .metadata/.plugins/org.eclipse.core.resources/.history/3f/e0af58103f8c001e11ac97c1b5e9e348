@@ -1,0 +1,40 @@
+package com.bd.producto.controlador;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+
+import com.bd.producto.modelo.ClassProducto;
+import com.bd.produtos.servicios.IProductoServicio;
+
+
+@Controller
+public class ProductoController {
+	
+	@Autowired
+	private IProductoServicio iproductoservicio;
+	
+	@GetMapping("/ListadoProductos")
+	public String ListadoProductos(Model modelo) {
+		System.out.println("Ingresando al método ListadoProductos");
+		List<ClassProducto> listar=iproductoservicio.ListadoProducto();
+		
+		modelo.addAttribute("ListadoProductos",listar);
+		
+		return "Vistas/Productos/ListadoProductos";
+	}
+	
+	
+	@GetMapping("/Rproducto")
+	public String RegistrarProducto(Model modelo) {
+		
+		ClassProducto producto=new ClassProducto();
+		
+		modelo.addAttribute("regproducto", producto);
+		
+		return "FrmRegProducto";
+	}
+}

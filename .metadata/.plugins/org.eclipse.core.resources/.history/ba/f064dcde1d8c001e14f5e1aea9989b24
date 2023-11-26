@@ -1,0 +1,5 @@
+package com.bd.producto.controlador;
+
+public class ProductoController {
+
+}

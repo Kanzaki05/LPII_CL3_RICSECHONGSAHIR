@@ -1,0 +1,13 @@
+package com.bd.ricse;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class LpiiCl3RicsechongsahirApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(LpiiCl3RicsechongsahirApplication.class, args);
+	}
+
+}

@@ -1,0 +1,39 @@
+package com.bd.produtos.servicios;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.bd.producto.interfaces.IProducto;
+import com.bd.producto.modelo.ClassProducto;
+
+@Service
+public class ClassProductoServicioImp implements IProductoServicio{
+
+	@Autowired
+	private IProducto iproductorepository;
+	@Override
+	public List<ClassProducto> ListadoProducto() {
+		// TODO Auto-generated method stub
+		return (List<ClassProducto>) iproductorepository.findAll();
+	}
+
+	@Override
+	public void RegistrarProducto(ClassProducto clpro) {
+		// TODO Auto-generated method stub
+		iproductorepository.save(clpro);
+	}
+
+	public ClassProducto BuscarProductoCodigo(Integer id) {
+		// TODO Auto-generated method stub
+		return iproductorepository.findById(id).orElse(null);
+	}
+
+	public void EliminarProducto(Integer id) {
+		// TODO Auto-generated method stub
+		iproductorepository.deleteById(id);
+	}
+
+	
+}

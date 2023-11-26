@@ -1,0 +1,5 @@
+package com.bd.produtos.servicios;
+
+public interface IProductoServicio {
+
+}

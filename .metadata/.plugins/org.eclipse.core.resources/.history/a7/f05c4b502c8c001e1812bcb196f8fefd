@@ -1,0 +1,10 @@
+package com.bd.producto.interfaces;
+
+import org.springframework.data.repository.CrudRepository;
+
+import com.bd.producto.modelo.ClassProducto;
+
+public interface IProducto extends CrudRepository<ClassProducto,Integer>{
+
+	
+}
